@@ -1,0 +1,25 @@
+*zftool.txt* A short multi line description of your plugin
+
+===============================================================================
+CONTENTS                                                               *zftool*
+
+    1. Intro ................................................... |zftool-intro|
+    2. Requirements ..................................... |zftool-requirements|
+    3. Usage ................................................... |zftool-usage|
+    4. Licence ............................................... |zftool-licence|
+===============================================================================
+1. Intro                                                         *zftool-intro*
+
+Overview of plugin
+
+2. Requirements                                           *zftool-requirements*
+
+What additional programs are required to run the plugin
+
+3. Usage                                                         *zftool-usage*
+
+How to use the plugin. What functions does it give the user?
+
+4. Licence                                                     *zftool-licence*
+
+This is open source make sure to include a licence
