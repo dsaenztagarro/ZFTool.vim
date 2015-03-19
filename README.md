@@ -16,6 +16,12 @@ Use your plugin manager of choice.
   - Add `Plug 'https://github.com/dsaenztagarro/zftool'` to .vimrc
   - Run `:PlugInstall`
 
+## Running tests manually
+
+```
+python zftooltests.py
+```
+
 ## Todo
 
 1. Write a plugin

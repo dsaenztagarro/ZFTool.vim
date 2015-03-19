@@ -8,13 +8,14 @@ python sys.path.append(vim.eval('expand("<sfile>:h")'))
 " --------------------------------
 "  Function(s)
 " --------------------------------
-function! TemplateExample()
+function! ZFCreateModule(name)
 python << endOfPython
 
-from zftool import zftool_example
+from zftool import CreateModuleCommand
 
-for n in range(5):
-    print(zftool_example())
+name = vim.eval("a:name")
+result = CreateModuleCommand().runWith(name)
+print(result)
 
 endOfPython
 endfunction
@@ -22,4 +23,4 @@ endfunction
 " --------------------------------
 "  Expose our commands to the user
 " --------------------------------
-command! Example call TemplateExample()
+command! -nargs=1 ZFModule call ZFCreateModule(<f-args>)
