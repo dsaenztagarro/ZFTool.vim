@@ -48,12 +48,12 @@ quickier to run
 4. About                                                         *zftool-about*
 
 The latest stable version can be found at
-  http://www.vim.org/scripts/script.php?script_id=XXXX
+  http://www.vim.org/scripts/script.php?script_id=5193
 
 Bugs can be reported and the very latest development version can be retrieved
 from GitHub:
-  https://github.com/dsaenztagarro/ZFTool.vim >
-  git clone git://github.com/dsaenztagarro/ZFTool.vim.git
+  https://github.com/dsaenztagarro/zftool.vim >
+  git clone git://github.com/dsaenztagarro/zftool.vim.git
 
 5. License                                                     *zftool-license*
 
