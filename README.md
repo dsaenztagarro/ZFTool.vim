@@ -13,8 +13,8 @@ editor.
 
 - Vim running inside tmux session
 - Installed plugin: [vimux](https://github.com/benmills/vimux)
-- Command zf.php available from command line
-  Check requirements for `zf.php` at official repository: [ZFTool](https://github.com/zendframework/ZFTool)
+- Command `zf.php` available from command line. Check requirements for `zf.php`
+  at official repository: [ZFTool](https://github.com/zendframework/ZFTool)
 
 ## Usage
 
@@ -22,11 +22,11 @@ Normal Mode:
 
 Currently you have access to ZFTool features from command line:
 
-:ZFnewProject    - Project creation
-:ZFnewModule     - Module creation
-:ZFnewController - Controller creation
-:ZFnewAction     - Action creation
-:ZFrepeat        - Repeat last ZF command run
+- :ZFnewProject    - Project creation
+- :ZFnewModule     - Module creation
+- :ZFnewController - Controller creation
+- :ZFnewAction     - Action creation
+- :ZFrepeat        - Repeat last ZF command run
 
 Every time you run a command values are cached in order to make next command
 quickier to run
