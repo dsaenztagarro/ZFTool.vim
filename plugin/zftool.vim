@@ -1,4 +1,4 @@
-" The "Vim ZFTool" plugin provides you with ZFTool commands
+" The "vimux-zftool" plugin provides you with ZFTool commands
 "
 " Author:  dsaenztagarro
 " URL:     https://github.com/dsaenztagarro/ZFTool.vim
@@ -6,7 +6,7 @@
 " ----------------------------------------------------------------------------
 
 if exists('g:loaded_zftool') || &cp
-  " finish
+  finish
 endif
 let g:loaded_zftool = 1
 
@@ -14,19 +14,6 @@ let g:loaded_zftool = 1
 let g:zftool_last_module = ''
 let g:zftool_last_controller = ''
 let g:zftool_last_command = ''
-" }}}
-" Utility Functions {{{
-function RunWithVimux(cmd)
-  if exists('$TMUX')
-    if exists(':VimuxRunCommand')
-      call VimuxRunCommand(a:cmd)
-    else
-      echo 'ERROR: Missing vim plugin Vimux'
-    endif
-  else
-    echo 'ERROR: Required running inside TMUX session'
-  endif
-endfunction!
 " }}}
 " Private functions {{{
 function s:input_module_name(last)
@@ -61,7 +48,7 @@ function! ZFcreateProject(last)
   let name = input("Project name: ")
   let path = s:input_path(a:last)
   let cmd = "zf.php create project " . name . " " . path
-  call RunWithVimux(cmd)
+  call VimuxRunCommand(cmd)
 endfunction
 
 function! ZFcreateModule(last)
@@ -69,7 +56,7 @@ function! ZFcreateModule(last)
   let name = s:input_module_name(0)
   let path = s:input_path(a:last)
   let cmd = "zf.php create module " . name . " " . path
-  call RunWithVimux(cmd)
+  call VimuxRunCommand(cmd)
 endfunction
 
 function ZFcreateController(last)
@@ -78,7 +65,7 @@ function ZFcreateController(last)
   let module = s:input_module_name(a:last)
   let path = s:input_path(a:last)
   let cmd = "zf.php create controller " . name . " " . module . " " . path
-  call RunWithVimux(cmd)
+  call VimuxRunCommand(cmd)
 endfunction!
 
 function ZFcreateAction(last)
@@ -88,7 +75,7 @@ function ZFcreateAction(last)
   let module = s:input_module_name(a:last)
   let path = s:input_path(a:last)
   let cmd = "zf.php create action " . name . " " . module . " " . path
-  call RunWithVimux(cmd)
+  call VimuxRunCommand(cmd)
 endfunction!
 
 function ZFrepeat()
