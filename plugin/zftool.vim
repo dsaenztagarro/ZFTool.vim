@@ -1,7 +1,7 @@
-" The "vimux-zftool" plugin provides you with ZFTool commands
+" The "vimux-zftool" plugin provides you with ZTTool commands
 "
 " Author:  dsaenztagarro
-" URL:     https://github.com/dsaenztagarro/ZFTool.vim
+" URL:     https://github.com/dsaenztagarro/ZTTool.vim
 " Version: 0.1
 " ----------------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ let g:zftool_last_command = ''
 " Private functions {{{
 function s:input_module_name(last)
   if !a:last
-    let name = input('Module name: ', g:zftool_last_module)
+    let name = input('module name: ', g:zftool_last_module)
     let g:zftool_last_module = name
   endif
   return g:zftool_last_module
@@ -43,24 +43,24 @@ function s:input_path(last)
 endfunction!
 " }}}
 " Interface {{{
-function! ZFcreateProject(last)
-  let g:zftool_last_command = "ZFcreateModule"
+function! ZFToolCreateProject(last)
+  let g:zftool_last_command = "ZTcreatemodule"
   let name = input("Project name: ")
   let path = s:input_path(a:last)
   let cmd = "zf.php create project " . name . " " . path
   call VimuxRunCommand(cmd)
 endfunction
 
-function! ZFcreateModule(last)
-  let g:zftool_last_command = "ZFcreateModule"
+function! ZFToolCreateModule(last)
+  let g:zftool_last_command = "ZFToolCreateModule"
   let name = s:input_module_name(0)
   let path = s:input_path(a:last)
   let cmd = "zf.php create module " . name . " " . path
   call VimuxRunCommand(cmd)
 endfunction
 
-function ZFcreateController(last)
-  let g:zftool_last_command = "ZFcreateController"
+function ZFToolCreateController(last)
+  let g:zftool_last_command = "ZFToolCreateController"
   let name = s:input_controller_name(0)
   let module = s:input_module_name(a:last)
   let path = s:input_path(a:last)
@@ -68,8 +68,8 @@ function ZFcreateController(last)
   call VimuxRunCommand(cmd)
 endfunction!
 
-function ZFcreateAction(last)
-  let g:zftool_last_command = "ZFcreateAction"
+function ZFToolCreateAction(last)
+  let g:zftool_last_command = "ZFToolCreateAction"
   let name = input("Action name: ")
   let controller = s:input_controller_name(a:last)
   let module = s:input_module_name(a:last)
@@ -78,13 +78,14 @@ function ZFcreateAction(last)
   call VimuxRunCommand(cmd)
 endfunction!
 
-function ZFrepeat()
+function ZFToolRepeat()
   exec(g:zftool_last_command + "(1)")
 endfunction!
 " }}}
 " Commands {{{
-command! ZFnewModule call ZFcreateModule(0)
-command! ZFnewController call ZFcreateController(0)
-command! ZFnewAction call ZFcreateAction(0)
-command! ZFrepeat call ZFrepeat(1)
+command! ZFToolCreateProject call ZFToolCreateProject(0)
+command! ZFToolCreateModule call ZFToolCreateModule(0)
+command! ZFToolCreateController call ZFToolController(0)
+command! ZFCreateAction call ZFToolCreateAction(0)
+command! ZFToolRepeat call ZFToolRepeat(1)
 " }}}

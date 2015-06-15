@@ -9,45 +9,55 @@ or as PHAR
 This plugin gives you access to ZFTool features without leaving your favourite
 editor.
 
-## Requirements
+## Dependencies
 
-- Vim running inside tmux session
-- Installed plugin: [vimux](https://github.com/benmills/vimux)
-- Command `zf.php` available from command line. Check requirements for `zf.php`
-  at official repository: [ZFTool](https://github.com/zendframework/ZFTool)
+This plugin depends on [vimux][1] and [zftool][2]. It also makes the assumption
+that you're using tmux.
 
 ## Usage
 
-Normal Mode:
+There are a number of pre-defined [commands](#commands). You can easily map
+them as needed like this:
 
-Currently you have access to ZFTool features from command line:
-
-- :ZFnewProject    - Project creation
-- :ZFnewModule     - Module creation
-- :ZFnewController - Controller creation
-- :ZFnewAction     - Action creation
-- :ZFrepeat        - Repeat last ZF command run
+    map <Leader>nm :ZFToolCreateModule<CR>
+    map <Leader>nc :ZFToolCreateController<CR>
+    map <Leader>na :ZFToolCreateAction<CR>
 
 Every time you run a command values are cached in order to make next command
 quickier to run
+
+## Commands
+
+* ZFToolCreateProject
+* ZFToolCreateModule
+* ZFToolCreateController
+* ZFToolCreateAction
+* ZFToolRepeat
 
 ## Installation
 
 Use your plugin manager of choice.
 
-- [Pathogen](https://github.com/tpope/vim-pathogen)
-  - `git clone https://github.com/dsaenztagarro/zftool ~/.vim/bundle/zftool`
-- [Vundle](https://github.com/gmarik/vundle)
-  - Add `Bundle 'https://github.com/dsaenztagarro/zftool'` to .vimrc
+- [Pathogen][3]
+  - `git clone https://github.com/dsaenztagarro/vimux-zftool ~/.vim/bundle/vimux-zftool`
+- [Vundle][4]
+  - Add `Bundle 'https://github.com/dsaenztagarro/vimux-zftool'` to .vimrc
   - Run `:BundleInstall`
-- [NeoBundle](https://github.com/Shougo/neobundle.vim)
-  - Add `NeoBundle 'https://github.com/dsaenztagarro/zftool'` to .vimrc
+- [NeoBundle][5]
+  - Add `NeoBundle 'https://github.com/dsaenztagarro/vimux-zftool'` to .vimrc
   - Run `:NeoBundleInstall`
-- [vim-plug](https://github.com/junegunn/vim-plug)
-  - Add `Plug 'https://github.com/dsaenztagarro/zftool'` to .vimrc
+- [vim-plug][6]
+  - Add `Plug 'https://github.com/dsaenztagarro/vimux-zftool'` to .vimrc
   - Run `:PlugInstall`
 
 ## License
 
 Copyright (c) David Saenz Tagarro.  Distributed under the same terms as Vim itself.
 See `:help license`.
+
+[1]: https://github.com/benmills/vimux
+[2]: https://github.com/zendframework/ZFTool
+[3]: https://github.com/tpope/vim-pathogen
+[4]: https://github.com/gmarik/vundle
+[5]: https://github.com/Shougo/neobundle.vim
+[6]: https://github.com/junegunn/vim-plug
