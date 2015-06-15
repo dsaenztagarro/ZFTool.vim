@@ -1,4 +1,4 @@
-# zftool
+# vimux-zftool
 
 ## Introduction
 
